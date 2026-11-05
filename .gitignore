@@ -1,0 +1,8 @@
+# Showcase allowlist: application code and data must never be added here.
+*
+!.gitignore
+!README.md
+!images/
+images/*
+!images/setup.png
+!images/day.png
