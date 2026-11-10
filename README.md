@@ -1,11 +1,16 @@
 # Smoking Cessation project showcase
 
-SM is an iPhone prototype for recording smoking activity and seeing how
-spending changes over time. It uses the first few recorded days to establish a
-baseline, then compares later spending with what the user would have been
-expected to spend at their baseline smoking rate.
+SM is an iPhone prototype that uses **cigarettes per hour** to put smoking
+counts in context. Six cigarettes over three unpaused hours is twice the
+rate of six over six hours. Build 2 uses the first few recorded days to
+establish that baseline rate, then estimates what later days would cost at
+the same rate and compares the estimate with actual spending.
 
-**Build 2.9 · Development on hold · Final installed-app testing and sign-off pending**
+**Showcase v0.05 · Development on hold · Final installed-app testing and sign-off pending**
+
+The showcase version tracks this public presentation. **Validation snapshot
+v0.03** identifies the published evidence package. **Build 2.9 (app v2.9.0)**
+is the app version covered by that evidence.
 
 [Visit the showcase website](https://bloutzenhiser.github.io/smoking_cessation_showcase/) ·
 [Read the validation record](VALIDATION.md)
@@ -33,7 +38,8 @@ The [project overview](PROJECT_OVERVIEW.md) explains the progression in plain En
 
 ## Demonstration screens
 
-These earlier interface previews use invented test data.
+**Demo screenshots use invented data.** The separate validation reports
+use recorded test events with the tester label and record IDs replaced.
 
 | Setup | Day in progress |
 | --- | --- |
@@ -41,17 +47,23 @@ These earlier interface previews use invented test data.
 
 ## What Build 2.9 testing found
 
-The independent CSV review covered **28 recorded events**. The report lists
+The independent Python CSV review covered **28 recorded test events**. The report lists
 **119 passing checks, one filename mismatch, 12 inconclusive checks, and five
 that did not apply**. The filename mismatch came from the downloaded copy's
 suffix. The CSV review leaves phone behavior and final acceptance to separate
-testing.
+testing. The showcase publishes the input CSV and the results. Re-running
+the original checks requires the separately maintained Python validator.
 
 - [Validation overview PDF](CSV_Validator/examples/build-2.9-recorded-overview.pdf) summarizes the results.
 - [Detailed validation PDF](CSV_Validator/examples/build-2.9-recorded-detailed.pdf) shows the individual checks and supporting evidence.
 - [Full validation record](VALIDATION.md) includes the CSV export, functional testing logs, and defect logs. The CSV uses a tester alias and replacement record IDs.
 
 ## Showcase history
+
+### v0.05 — November 10, 2026
+
+- Explained why Build 2 uses cigarettes per hour.
+- Clarified the version labels and the evidence behind the validation results.
 
 ### v0.04 — November 10, 2026
 

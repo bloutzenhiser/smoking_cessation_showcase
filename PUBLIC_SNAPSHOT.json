@@ -19,14 +19,14 @@
     "CSV_Validator/examples/build-2.9-recorded-detailed.pdf": "21c6810687591b20378a7de97eacd7daac1bed8228a5aedafa9592eb4ccfa14a",
     "CSV_Validator/examples/build-2.9-recorded-overview.pdf": "5083888fd3af36ed643e93fc708c00b48da86d802a954efbf044dc1ef946b2d8",
     "PROJECT_OVERVIEW.md": "07ba8a281da9a163b34d8565be01cc56e6deaec3559d76223415d2c8a3d9bcd1",
-    "README.md": "80e9257e1e4d5f8a06eae58775b87755ea0655d2b333110ddfbaa1a50b6e05ab",
-    "VALIDATION.md": "a27d66908d69ad45b7a5475bcb85598af6f9a460a9cbcd2dae15ec2d152638d3",
+    "README.md": "a23476e70c93d9600fc6aa887192dabcb79f2de9914d21281f2444e45b72b468",
+    "VALIDATION.md": "48535a9d52a872170057a3a62ed68c9d6be295f8fcb6d4796fbce951057aa8e3",
     "docs/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "docs/images/day.png": "6a2bab73935fa9001a8dee2bc91e33382a7746ea3f7b5900804154a53ccb52b5",
     "docs/images/setup.png": "6bb227013de13bb92c518e5cc093ce2f2cee9bff90f46b38fed81dab5405b0ca",
-    "docs/index.html": "5adecd685e7277ae5dd40424ed216473bb9aeafdef78740c0a3e7db663ee4668",
+    "docs/index.html": "0b9a1da760ead44b7f54570f88742f8c3472d25dabf8a1fbf21702829c34e203",
     "images/day.png": "6a2bab73935fa9001a8dee2bc91e33382a7746ea3f7b5900804154a53ccb52b5",
     "images/setup.png": "6bb227013de13bb92c518e5cc093ce2f2cee9bff90f46b38fed81dab5405b0ca"
   },
-  "showcase_version": "0.04"
+  "showcase_version": "0.05"
 }
