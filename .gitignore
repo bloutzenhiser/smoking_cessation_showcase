@@ -19,3 +19,9 @@ images/*
 !CSV_Validator/examples/SM_Build2.9_v2.9.0_Device-A_20261107T205513245Z_87095b6b-1053-4c55-977e-d1312783a336 (1).csv
 !CSV_Validator/examples/build-2.9-recorded-detailed.pdf
 !CSV_Validator/examples/build-2.9-recorded-overview.pdf
+!/docs/
+!/docs/index.html
+!/docs/.nojekyll
+!/docs/images/
+!/docs/images/setup.png
+!/docs/images/day.png

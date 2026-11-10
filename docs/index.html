@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A showcase of the Smoking Cessation iPhone prototype and its Build 2.9 validation record.">
+  <title>Smoking Cessation · Project showcase</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #183c33;
+      --muted: #4c6058;
+      --paper: #faf8f1;
+      --sage: #e8eee4;
+      --line: #d0d9cc;
+      --green: #224e42;
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    a { color: inherit; text-underline-offset: 0.22em; }
+    a:hover { text-decoration-thickness: 0.15em; }
+    a:focus-visible { outline: 3px solid #90632e; outline-offset: 5px; }
+    .wrap { width: min(72rem, calc(100% - 4rem)); margin-inline: auto; }
+    .header, .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      padding-block: 1.25rem;
+    }
+    .header { border-bottom: 1px solid var(--line); }
+    .identity, nav { display: flex; align-items: center; gap: 0.8rem; }
+    .identity { font-weight: 650; }
+    .monogram {
+      display: grid;
+      place-items: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 0.65rem;
+      background: var(--green);
+      color: white;
+      font-size: 0.9rem;
+    }
+    nav { gap: clamp(0.85rem, 3vw, 1.8rem); font-size: 0.95rem; }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(2rem, 6vw, 5rem);
+      padding-block: clamp(2.5rem, 7vw, 5rem);
+    }
+    .build {
+      margin: 0 0 1.25rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 650;
+    }
+    h1, h2 {
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      line-height: 1.05;
+    }
+    h1 { font-size: clamp(3rem, 6.5vw, 5.5rem); }
+    h2 { font-size: clamp(2rem, 3.3vw, 3rem); }
+    .intro, .validation p {
+      max-width: 36ch;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.45vw, 1.2rem);
+      line-height: 1.6;
+    }
+    .intro { margin: 1.5rem 0 1.8rem; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.15rem;
+      min-height: 2.75rem;
+      background: var(--green);
+      color: #fff;
+      border-radius: 0.45rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .button:hover { background: #153b31; }
+    .screens {
+      padding: clamp(1rem, 2.75vw, 2rem);
+      background: var(--sage);
+      border-radius: 1.4rem;
+    }
+    .screens h2 {
+      font-family: inherit;
+      font-size: 1rem;
+      letter-spacing: normal;
+      font-weight: 650;
+    }
+    .screen-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(0.65rem, 2.3vw, 1.5rem);
+      margin-top: 1rem;
+    }
+    figure { margin: 0; }
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid #b7c5b8;
+      border-radius: clamp(0.55rem, 1.5vw, 1rem);
+      background: #f0f3ec;
+    }
+    figcaption { margin-top: 0.65rem; line-height: 1.45; }
+    figcaption strong { display: block; font-size: 0.95rem; }
+    figcaption span { display: block; color: var(--muted); font-size: 0.85rem; }
+    .sample-note {
+      margin: 1.15rem 0 0;
+      color: var(--muted);
+      font-size: 0.83rem;
+    }
+    .validation {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+      gap: 0.75rem clamp(2rem, 6vw, 5rem);
+      align-items: center;
+      padding-block: clamp(1.5rem, 4vw, 3rem);
+      border-block: 1px solid var(--line);
+    }
+    .validation p { max-width: 45ch; margin: 0.65rem 0 0; }
+    .validation a { justify-self: start; font-weight: 650; }
+    .footer { color: var(--muted); font-size: 0.9rem; }
+
+    @media (max-width: 46rem) {
+      .wrap { width: calc(100% - 2rem); }
+      .showcase, .validation { grid-template-columns: 1fr; }
+      .screens { max-width: 31rem; }
+      .intro { margin-block: 1rem 1.25rem; }
+    }
+
+    @media (max-width: 24rem) {
+      .header { gap: 0.75rem 1rem; }
+      .identity, nav { font-size: 0.85rem; }
+      .screens { padding-inline: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header wrap">
+    <div class="identity"><span class="monogram" aria-hidden="true">SM</span> Project showcase</div>
+    <nav aria-label="On this page">
+      <a href="#screens">Demo screens</a>
+      <a href="#validation">Testing</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="showcase" aria-labelledby="title">
+      <div>
+        <p class="build">Build 2.9 · Development on hold</p>
+        <h1 id="title">Smoking<br>Cessation</h1>
+        <p class="intro">An iPhone prototype for recording smoking activity, establishing a baseline, and comparing later spending with that baseline.</p>
+        <a class="button" href="https://github.com/bloutzenhiser/smoking_cessation_showcase/blob/main/CSV_Validator/examples/build-2.9-recorded-overview.pdf">View the validation overview (PDF)</a>
+      </div>
+
+      <section class="screens" id="screens" aria-labelledby="screens-heading">
+        <h2 id="screens-heading">Demo screens</h2>
+        <div class="screen-grid">
+          <figure>
+            <img src="images/setup.png" width="860" height="2000" alt="Setup screen with pack price and baseline length options">
+            <figcaption><strong>Setup</strong><span>Set a pack price and choose a baseline length.</span></figcaption>
+          </figure>
+          <figure>
+            <img src="images/day.png" width="860" height="2000" alt="Day in Progress screen with a cigarette count and controls to record, pause, or end the day">
+            <figcaption><strong>Day in Progress</strong><span>Record cigarettes and review the current day.</span></figcaption>
+          </figure>
+        </div>
+        <p class="sample-note">These earlier interface previews use invented test data.</p>
+      </section>
+    </section>
+
+    <section class="validation" id="validation" aria-labelledby="validation-heading">
+      <div>
+        <h2 id="validation-heading">Build 2.9 testing</h2>
+        <p>Final testing of the installed app and Build 2 sign-off remain open.</p>
+      </div>
+      <a href="https://github.com/bloutzenhiser/smoking_cessation_showcase/blob/main/VALIDATION.md">See the full validation record on GitHub</a>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <span>Smoking Cessation</span>
+    <a href="https://github.com/bloutzenhiser/smoking_cessation_showcase">Showcase repository</a>
+  </footer>
+</body>
+</html>
