@@ -32,9 +32,13 @@ filename validation finding.
 
 ## Reviewing the results
 
-The CSV is the input to the published Python validation run. The PDFs report
-the outcomes and supporting evidence, and the Excel logs track functional
-tests and defects, including pending and inconclusive cases. Re-running the
-original checks requires the separately maintained Python validator. Readers
-can check the spending math independently using the
+The CSV is the input to the published Python validation run. The validator
+checked the export separately from the app. The PDFs report the outcomes and
+supporting evidence, and the Excel logs track functional tests and defects,
+including pending and inconclusive cases.
+
+Re-running the original checks requires the separately maintained Python
+validator. The published reports are evidence of the recorded run. A reviewer
+would need to repeat the checks to reproduce its findings. Readers can check
+the spending math independently using the
 [worked example](BUILD_2_REQUIREMENTS.md#worked-example).

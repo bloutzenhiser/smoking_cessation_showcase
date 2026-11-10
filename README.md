@@ -1,12 +1,12 @@
 # Smoking Cessation project showcase
 
-SM is an iPhone prototype that uses **cigarettes per hour** to put smoking
-counts in context. Six cigarettes over three unpaused hours is twice the
-rate of six over six hours. Build 2 uses the first few recorded days to
-establish that baseline rate, then estimates what later days would cost at
-the same rate and compares the estimate with actual spending.
+SM is an iPhone prototype for tracking smoking activity and spending. Reviewing
+the first outputs exposed a measurement problem. A shorter recorded Day could
+show fewer cigarettes even when the smoking rate stayed the same. Build 2 uses
+**cigarettes per unpaused hour** to compare Days of different lengths and estimate
+what later Days would cost at the baseline rate.
 
-**Showcase v0.05 · Development on hold · Final installed-app testing and sign-off pending**
+**Showcase v0.06 · Development on hold · Final installed-app testing and sign-off pending**
 
 The showcase version tracks this public presentation. **Validation snapshot
 v0.03** identifies the published evidence package. **Build 2.9 (app v2.9.0)**
@@ -26,6 +26,15 @@ The [project overview](PROJECT_OVERVIEW.md) explains the progression in plain En
 
 - [Build 2 requirements](BUILD_2_REQUIREMENTS.md) explains the recording and spending rules and includes a worked savings example.
 - [Build 2 implementation and testing](BUILD_2_IMPLEMENTATION_AND_TESTING.md) explains what was built, what the evidence shows, and what remains open.
+
+## How the work was reviewed
+
+The project owner set requirements, reviewed results with AI assistance, and
+retained authority over phone-test acceptance and final sign-off. ChatGPT Work
+mode assisted with implementation, calculations, and documentation. Test claims
+were checked against recorded phone results, CSV evidence, or separate
+calculations, according to what each check could establish. The
+[project overview](PROJECT_OVERVIEW.md#how-the-work-was-reviewed) describes those roles.
 
 ## Project experience
 
@@ -59,6 +68,11 @@ the original checks requires the separately maintained Python validator.
 - [Full validation record](VALIDATION.md) includes the CSV export, functional testing logs, and defect logs. The CSV uses a tester alias and replacement record IDs.
 
 ## Showcase history
+
+### v0.06 — November 10, 2026
+
+- Documented how reviewing the initial output led to cigarettes per unpaused hour.
+- Explained who made requirements and acceptance decisions and how test claims were checked.
 
 ### v0.05 — November 10, 2026
 

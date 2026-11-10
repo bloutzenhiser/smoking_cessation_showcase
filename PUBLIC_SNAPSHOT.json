@@ -18,9 +18,9 @@
     "CSV_Validator/examples/SM_Build2.9_v2.9.0_Device-A_20261107T205513245Z_87095b6b-1053-4c55-977e-d1312783a336 (1).csv": "1dbb2dbfdcf4cff63242e08a1be7865681a47b541a4f1b35b7bac5b97e41abe1",
     "CSV_Validator/examples/build-2.9-recorded-detailed.pdf": "21c6810687591b20378a7de97eacd7daac1bed8228a5aedafa9592eb4ccfa14a",
     "CSV_Validator/examples/build-2.9-recorded-overview.pdf": "5083888fd3af36ed643e93fc708c00b48da86d802a954efbf044dc1ef946b2d8",
-    "PROJECT_OVERVIEW.md": "07ba8a281da9a163b34d8565be01cc56e6deaec3559d76223415d2c8a3d9bcd1",
-    "README.md": "a23476e70c93d9600fc6aa887192dabcb79f2de9914d21281f2444e45b72b468",
-    "VALIDATION.md": "48535a9d52a872170057a3a62ed68c9d6be295f8fcb6d4796fbce951057aa8e3",
+    "PROJECT_OVERVIEW.md": "1081412420f0707e86de3cc44d7f2242f8fb6a2c783875e6acd03be037bbf13b",
+    "README.md": "eb2e279fa13b768b0595e0112d7c0edeeb7d3b8448d2662c89415d38ec8ab37e",
+    "VALIDATION.md": "ef91b74d20696fc4e45757f206254486c53fe1b3778493820ff8f357c6e7a4cb",
     "docs/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "docs/images/day.png": "6a2bab73935fa9001a8dee2bc91e33382a7746ea3f7b5900804154a53ccb52b5",
     "docs/images/setup.png": "6bb227013de13bb92c518e5cc093ce2f2cee9bff90f46b38fed81dab5405b0ca",
@@ -28,5 +28,5 @@
     "images/day.png": "6a2bab73935fa9001a8dee2bc91e33382a7746ea3f7b5900804154a53ccb52b5",
     "images/setup.png": "6bb227013de13bb92c518e5cc093ce2f2cee9bff90f46b38fed81dab5405b0ca"
   },
-  "showcase_version": "0.05"
+  "showcase_version": "0.06"
 }
