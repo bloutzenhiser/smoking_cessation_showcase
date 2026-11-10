@@ -1,13 +1,23 @@
-# SM — project showcase
+# Smoking Cessation project showcase
 
-SM is an iPhone app project focused on understanding smoking patterns and making
-spending more visible. It begins with an observed baseline and supports tracking
-later Days against that starting point.
+SM is an iPhone prototype for recording smoking activity and seeing how
+spending changes over time. It uses the first few recorded days to establish a
+baseline, then compares later spending with what the user would have been
+expected to spend at their baseline smoking rate.
 
-**Showcase v0.02 · November 10, 2026 · Development on hold**
+**Build 2.9 · Development on hold · Final installed-app testing and sign-off pending**
 
-This showcase contains a [plain-English project overview](PROJECT_OVERVIEW.md),
-demonstration screenshots, and the [Build 2.9 validation record](VALIDATION.md).
+[Visit the showcase website](https://bloutzenhiser.github.io/smoking_cessation_showcase/) ·
+[Read the validation record](VALIDATION.md)
+
+## From Build 1 to Build 2
+
+| Build | What it delivered | Status |
+| --- | --- | --- |
+| Build 1 | Recorded cigarettes and day history on the phone, with pause, resume, and CSV export. | Build 1.3.2 passed its final phone checklist on October 28, 2026. |
+| Build 2 | Added baseline calculations and spending comparisons. Build 2.9 also recorded whether the user confirmed another cigarette within 60 seconds. | Build 2.9 is the latest tested version in this showcase. Final installed-app testing and sign-off remain open. |
+
+The [project overview](PROJECT_OVERVIEW.md) explains the progression in plain English.
 
 ## Project experience
 
@@ -20,21 +30,30 @@ demonstration screenshots, and the [Build 2.9 validation record](VALIDATION.md).
 
 ## Demonstration screens
 
-These images are interface previews made with invented test data. They contain no
-personal smoking records and are not evidence of a completed release.
+These earlier interface previews use invented test data.
 
 | Setup | Day in progress |
 | --- | --- |
 | <img src="images/setup.png" width="320" alt="SM setup preview with pack price and baseline length options"> | <img src="images/day.png" width="320" alt="SM Day preview showing a synthetic cigarette count and recording controls"> |
 
-## Development progress
+## What Build 2.9 testing found
 
-The current milestone covers baseline collection, Day recording, retained history,
-and spending and savings views. Functional testing takes place through Expo Go;
-regression testing takes place in the installed app. Final installed-app
-regression testing and Build 2 sign-off remain open.
+The independent CSV review covered **28 recorded events**. The report lists
+**119 passing checks, one filename mismatch, 12 inconclusive checks, and five
+that did not apply**. The filename mismatch came from the downloaded copy's
+suffix. The CSV review leaves phone behavior and final acceptance to separate
+testing.
+
+- [Validation overview PDF](CSV_Validator/examples/build-2.9-recorded-overview.pdf) summarizes the results.
+- [Detailed validation PDF](CSV_Validator/examples/build-2.9-recorded-detailed.pdf) shows the individual checks and supporting evidence.
+- [Full validation record](VALIDATION.md) includes the CSV export, functional testing logs, and defect logs. The CSV uses a tester alias and replacement record IDs.
 
 ## Showcase history
+
+### v0.03 — November 10, 2026
+
+- Published the one-page showcase website.
+- Added the Build 1 to Build 2 milestones and Build 2.9 testing summary to this README.
 
 ### v0.02 — November 10, 2026
 
