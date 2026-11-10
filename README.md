@@ -19,6 +19,9 @@ expected to spend at their baseline smoking rate.
 
 The [project overview](PROJECT_OVERVIEW.md) explains the progression in plain English.
 
+- [Build 2 requirements](BUILD_2_REQUIREMENTS.md) explains the recording and spending rules and includes a worked savings example.
+- [Build 2 implementation and testing](BUILD_2_IMPLEMENTATION_AND_TESTING.md) explains what was built, what the evidence shows, and what remains open.
+
 ## Project experience
 
 - Choose a baseline length and record a price per pack.
@@ -49,6 +52,10 @@ testing.
 - [Full validation record](VALIDATION.md) includes the CSV export, functional testing logs, and defect logs. The CSV uses a tester alias and replacement record IDs.
 
 ## Showcase history
+
+### v0.04 — November 10, 2026
+
+- Added public summaries of the Build 2 requirements, implementation, and testing.
 
 ### v0.03 — November 10, 2026
 

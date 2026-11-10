@@ -8,7 +8,9 @@
   "acceptance_status": "Installed-app regression and final Build 2 acceptance remain open.",
   "files": {
     ".gitattributes": "5b4726ee5faf5c62cf56e2df2e0c2f67ed0e51f15b1df9e90255ed019b937c0e",
-    ".gitignore": "cecd83e36a1d4319dbff6d0890ee851b14ccdd339768e8055e5d6fc5f0d14695",
+    ".gitignore": "18f975187f2b49f372e97c61c661b8ae97246e09ca4593520ccdc88d051e44de",
+    "BUILD_2_IMPLEMENTATION_AND_TESTING.md": "1efa543e585514c69458539923de2712a4cf81d6254e36857004a977b6a9d49e",
+    "BUILD_2_REQUIREMENTS.md": "49ada13f6f0c23f17f79834da52fe1f106380719a288daaece527086e61601cf",
     "CSV_Validator/examples/14_Build_2.9_Plain_English_Validation_Log_v0.08.xlsx": "3331ef3934e66e1ec41eff20dc7b890b361c3cac32e87fbb3bacd538f3e2fb98",
     "CSV_Validator/examples/14_Build_2.9_v2.9.0_Functional_Testing_Validation_Log_v0.14.xlsx": "dbb23642a7f1d62bdda047967533de97a2814c79b0fde846db0c9193d7e362f6",
     "CSV_Validator/examples/15_Build_2.9_Plain_English_Defect_Log_v0.05.xlsx": "e4ca738d3c2266dc78bb2182f3f39747e25258655fed88bdb1cb8cfff2ade707",
@@ -17,8 +19,8 @@
     "CSV_Validator/examples/build-2.9-recorded-detailed.pdf": "21c6810687591b20378a7de97eacd7daac1bed8228a5aedafa9592eb4ccfa14a",
     "CSV_Validator/examples/build-2.9-recorded-overview.pdf": "5083888fd3af36ed643e93fc708c00b48da86d802a954efbf044dc1ef946b2d8",
     "PROJECT_OVERVIEW.md": "07ba8a281da9a163b34d8565be01cc56e6deaec3559d76223415d2c8a3d9bcd1",
-    "README.md": "959a6121f88bf5c1783bccaf64065e8026181888eda2b9bb9a6430ba9aabfe6a",
-    "VALIDATION.md": "8fdd13557c6476a74f60827f21628c8c184eea3b79caf5035e1c87a8c6003c96",
+    "README.md": "80e9257e1e4d5f8a06eae58775b87755ea0655d2b333110ddfbaa1a50b6e05ab",
+    "VALIDATION.md": "a27d66908d69ad45b7a5475bcb85598af6f9a460a9cbcd2dae15ec2d152638d3",
     "docs/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "docs/images/day.png": "6a2bab73935fa9001a8dee2bc91e33382a7746ea3f7b5900804154a53ccb52b5",
     "docs/images/setup.png": "6bb227013de13bb92c518e5cc093ce2f2cee9bff90f46b38fed81dab5405b0ca",
@@ -26,5 +28,5 @@
     "images/day.png": "6a2bab73935fa9001a8dee2bc91e33382a7746ea3f7b5900804154a53ccb52b5",
     "images/setup.png": "6bb227013de13bb92c518e5cc093ce2f2cee9bff90f46b38fed81dab5405b0ca"
   },
-  "showcase_version": "0.03"
+  "showcase_version": "0.04"
 }

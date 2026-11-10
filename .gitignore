@@ -25,3 +25,5 @@ images/*
 !/docs/images/
 !/docs/images/setup.png
 !/docs/images/day.png
+!BUILD_2_REQUIREMENTS.md
+!BUILD_2_IMPLEMENTATION_AND_TESTING.md
