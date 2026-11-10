@@ -4,10 +4,10 @@ SM is an iPhone app project focused on understanding smoking patterns and making
 spending more visible. It begins with an observed baseline and supports tracking
 later Days against that starting point.
 
-**Showcase v0.01 · November 5, 2026 · In development**
+**Showcase v0.02 · November 10, 2026 · Development on hold**
 
-This repository contains a project overview and demonstration screenshots.
-The application source code and working development records are private.
+This showcase contains a [plain-English project overview](PROJECT_OVERVIEW.md),
+demonstration screenshots, and the [Build 2.9 validation record](VALIDATION.md).
 
 ## Project experience
 
@@ -31,10 +31,15 @@ personal smoking records and are not evidence of a completed release.
 
 The current milestone covers baseline collection, Day recording, retained history,
 and spending and savings views. Functional testing takes place through Expo Go;
-regression testing takes place in the integrated app. Development and validation
-are ongoing.
+regression testing takes place in the installed app. Final installed-app
+regression testing and Build 2 sign-off remain open.
 
 ## Showcase history
+
+### v0.02 — November 10, 2026
+
+- Added the Build 1 to Build 2 overview and Build 2.9 validation evidence.
+- Recorded the development hold and outstanding acceptance work.
 
 ### v0.01 — November 5, 2026
 

@@ -1,4 +1,4 @@
-# Showcase allowlist: application code and data must never be added here.
+# Showcase allowlist for documentation, demonstration images, and reviewed evidence.
 *
 !.gitignore
 !README.md
@@ -6,3 +6,16 @@
 images/*
 !images/setup.png
 !images/day.png
+!.gitattributes
+!PROJECT_OVERVIEW.md
+!VALIDATION.md
+!PUBLIC_SNAPSHOT.json
+!CSV_Validator/
+!CSV_Validator/examples/
+!CSV_Validator/examples/14_Build_2.9_Plain_English_Validation_Log_v0.08.xlsx
+!CSV_Validator/examples/14_Build_2.9_v2.9.0_Functional_Testing_Validation_Log_v0.14.xlsx
+!CSV_Validator/examples/15_Build_2.9_Plain_English_Defect_Log_v0.05.xlsx
+!CSV_Validator/examples/15_Build_2_Defect_Log_v0.06.xlsx
+!CSV_Validator/examples/SM_Build2.9_v2.9.0_Device-A_20261107T205513245Z_87095b6b-1053-4c55-977e-d1312783a336 (1).csv
+!CSV_Validator/examples/build-2.9-recorded-detailed.pdf
+!CSV_Validator/examples/build-2.9-recorded-overview.pdf

@@ -1,0 +1,26 @@
+{
+  "snapshot_version": "0.03",
+  "recorded_date": "2026-11-10",
+  "purpose": "Public documentation and validation evidence. Development is on hold.",
+  "source_app_build": "Build2.9",
+  "source_app_version": "2.9.0",
+  "publication_evidence": "Pseudonymized CSV, companion PDF reports, two validation logs and two defect logs. Recorded events and test results retained.",
+  "acceptance_status": "Installed-app regression and final Build 2 acceptance remain open.",
+  "files": {
+    ".gitattributes": "5b4726ee5faf5c62cf56e2df2e0c2f67ed0e51f15b1df9e90255ed019b937c0e",
+    ".gitignore": "211f1ca86aca202a7fb4778a9a52b7472761e738fafebe7c1ba9d1a87fb69c0d",
+    "CSV_Validator/examples/14_Build_2.9_Plain_English_Validation_Log_v0.08.xlsx": "3331ef3934e66e1ec41eff20dc7b890b361c3cac32e87fbb3bacd538f3e2fb98",
+    "CSV_Validator/examples/14_Build_2.9_v2.9.0_Functional_Testing_Validation_Log_v0.14.xlsx": "dbb23642a7f1d62bdda047967533de97a2814c79b0fde846db0c9193d7e362f6",
+    "CSV_Validator/examples/15_Build_2.9_Plain_English_Defect_Log_v0.05.xlsx": "e4ca738d3c2266dc78bb2182f3f39747e25258655fed88bdb1cb8cfff2ade707",
+    "CSV_Validator/examples/15_Build_2_Defect_Log_v0.06.xlsx": "16135266f43bda5261f62278f34615935a67bb0efda77d4bf134faa3275edc8a",
+    "CSV_Validator/examples/SM_Build2.9_v2.9.0_Device-A_20261107T205513245Z_87095b6b-1053-4c55-977e-d1312783a336 (1).csv": "1dbb2dbfdcf4cff63242e08a1be7865681a47b541a4f1b35b7bac5b97e41abe1",
+    "CSV_Validator/examples/build-2.9-recorded-detailed.pdf": "21c6810687591b20378a7de97eacd7daac1bed8228a5aedafa9592eb4ccfa14a",
+    "CSV_Validator/examples/build-2.9-recorded-overview.pdf": "5083888fd3af36ed643e93fc708c00b48da86d802a954efbf044dc1ef946b2d8",
+    "PROJECT_OVERVIEW.md": "07ba8a281da9a163b34d8565be01cc56e6deaec3559d76223415d2c8a3d9bcd1",
+    "README.md": "24cf4b01391966a8b06ed3f73c20469cf6dad2c0cb0a14e81afb0b1361587cf3",
+    "VALIDATION.md": "8fdd13557c6476a74f60827f21628c8c184eea3b79caf5035e1c87a8c6003c96",
+    "images/day.png": "6a2bab73935fa9001a8dee2bc91e33382a7746ea3f7b5900804154a53ccb52b5",
+    "images/setup.png": "6bb227013de13bb92c518e5cc093ce2f2cee9bff90f46b38fed81dab5405b0ca"
+  },
+  "showcase_version": "0.02"
+}
