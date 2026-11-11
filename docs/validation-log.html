@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse the 41 cases in the Smoking Cessation Build 2.9 functional validation log.">
+  <title>Build 2.9 validation log · Smoking Cessation</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #faf8f1;
+      --ink: #183c33;
+      --muted: #4c6058;
+      --line: #d0d9cc;
+      --green: #224e42;
+      --sage: #e8eee4;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; line-height: 1.55; }
+    a { color: inherit; text-underline-offset: 0.22em; }
+    :focus-visible { outline: 3px solid #90632e; outline-offset: 3px; }
+    .wrap { width: min(62rem, calc(100% - 3rem)); margin-inline: auto; }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem 1rem;
+      padding-block: 1.2rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .home { display: inline-flex; align-items: center; gap: 0.7rem; font-weight: 650; }
+    .monogram {
+      display: grid;
+      place-items: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 0.65rem;
+      background: var(--green);
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    .intro { margin-block: clamp(2rem, 5vw, 3.5rem) 1.6rem; }
+    h1, h2 {
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 1.07;
+    }
+    h1 { font-size: clamp(2.5rem, 6.2vw, 4.5rem); }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); }
+    .intro p, .scope { max-width: 68ch; color: var(--muted); }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 0.8rem;
+      background: var(--line);
+    }
+    .stats div { padding: 0.9rem 1.15rem; background: var(--sage); }
+    .stats dt { color: var(--muted); font-size: 0.88rem; }
+    .stats dd { margin: 0; font-size: 1.8rem; font-weight: 650; line-height: 1.2; }
+    .scope { margin-block: 1.1rem 2rem; }
+    .scope p { margin: 0.55rem 0; }
+    .controls {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.3rem;
+      margin-block: 0.9rem;
+    }
+    .controls[hidden] { display: none; }
+    label { font-weight: 650; }
+    select {
+      min-height: 2.5rem;
+      margin-inline-start: 0.5rem;
+      padding: 0.35rem 0.65rem;
+      border: 1px solid #aab8aa;
+      border-radius: 0.4rem;
+      background: #fff;
+      color: inherit;
+      font: inherit;
+    }
+    output { color: var(--muted); font-size: 0.92rem; }
+    .case-list { border-top: 1px solid var(--line); }
+    .case { border-bottom: 1px solid var(--line); }
+    .case[open] { background: #fffdf7; }
+    .case summary {
+      display: grid;
+      grid-template-columns: 6.2rem minmax(0, 1fr) auto 0.65rem;
+      gap: 0.6rem;
+      align-items: center;
+      padding: 0.78rem 0.7rem;
+      list-style: none;
+      cursor: pointer;
+    }
+    .case summary::-webkit-details-marker { display: none; }
+    .case summary::after {
+      content: "";
+      width: 0.48rem;
+      height: 0.48rem;
+      border-right: 2px solid var(--muted);
+      border-bottom: 2px solid var(--muted);
+      transform: rotate(45deg);
+      justify-self: end;
+    }
+    .case[open] summary::after { transform: rotate(225deg); }
+    .case summary:hover { background: var(--sage); }
+    .case-id { color: var(--muted); font-size: 0.84rem; font-variant-numeric: tabular-nums; }
+    .case-title { font-weight: 650; }
+    .status {
+      padding: 0.2rem 0.55rem;
+      border-radius: 0.3rem;
+      color: #38443d;
+      background: #e9e9df;
+      font-size: 0.82rem;
+      font-weight: 650;
+    }
+    .status.pass { background: #dcead8; color: #234d3d; }
+    .status.inconclusive { background: #f3e6cd; color: #674b20; }
+    .case-body { padding: 0 1rem 0.95rem 7.5rem; color: var(--muted); }
+    .case-body p { max-width: 76ch; margin: 0.5rem 0 0; }
+    .case-body strong { display: block; color: var(--ink); }
+    .references { font-size: 0.86rem; }
+    .footer { margin-block: 1.5rem 2rem; color: var(--muted); }
+
+    @media (max-width: 38rem) {
+      .wrap { width: calc(100% - 2rem); }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .case summary { grid-template-columns: minmax(0, 1fr) auto 0.65rem; gap: 0.25rem 0.5rem; }
+      .case-id { grid-column: 1; grid-row: 1; }
+      .case-title { grid-column: 1; grid-row: 2; }
+      .case summary .status { grid-column: 2; grid-row: 1 / 3; }
+      .case summary::after { grid-column: 3; grid-row: 1 / 3; }
+      .case-body { padding-inline: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header wrap">
+    <a class="home" href="index.html"><span class="monogram" aria-hidden="true">SM</span> Project showcase</a>
+    <a href="https://github.com/bloutzenhiser/smoking_cessation_showcase/blob/main/VALIDATION.md">Full validation record</a>
+  </header>
+
+  <main class="wrap">
+    <section class="intro" aria-labelledby="title">
+      <h1 id="title">Build 2.9 validation log</h1>
+      <p>App v2.9.0 · Plain-English workbook v0.08 · November 7, 2026</p>
+    </section>
+
+    <dl class="stats" aria-label="Recorded functional log results">
+      <div><dt>Total cases</dt><dd>41</dd></div>
+      <div><dt>Pass</dt><dd>5</dd></div>
+      <div><dt>Pending</dt><dd>35</dd></div>
+      <div><dt>Inconclusive</dt><dd>1</dd></div>
+    </dl>
+    <div class="scope">
+      <p>These are the results recorded in the workbook. The saved-history case is marked Pass, and its note records that the full case is incomplete. Final installed-app testing and Build 2 sign-off remain open.</p>
+      <p><a href="https://github.com/bloutzenhiser/smoking_cessation_showcase/blob/main/CSV_Validator/examples/14_Build_2.9_Plain_English_Validation_Log_v0.08.xlsx">Open the original Excel log</a> for test steps and the evidence register.</p>
+    </div>
+
+    <section aria-labelledby="case-heading">
+      <h2 id="case-heading">Test cases</h2>
+      <p>Open a case to see its expected behavior and recorded note.</p>
+      <div class="controls" id="filters" hidden>
+        <label for="status">Filter by result
+          <select id="status">
+            <option value="">All results</option>
+            <option>Pass</option>
+            <option>Pending</option>
+            <option>Inconclusive</option>
+          </select>
+        </label>
+        <output id="visible-count" aria-live="polite"></output>
+      </div>
+      <div class="case-list">
+      <details class="case" data-status="Pass">
+        <summary>
+          <span class="case-id">B22-F00</span>
+          <span class="case-title">Open the app and check saved history</span>
+          <span class="status pass">Pass</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> The version reads Build2.9 / v2.9.0. Previously saved history is visible. This checks visibility only; checking every old value is covered by B2-P22.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+          <p class="references">Evidence B29-R01</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P01</span>
+          <span class="case-title">Set up a new program</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Spending shows $0.00. Averages show as unavailable rather than a made-up value. All money is shown in US dollars with two digits after the decimal point.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P02</span>
+          <span class="case-title">Check spending for a Day</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Day spending equals the total cost of its recorded cigarettes. Cigarettes in an unfinished Day are included in the total spent in the program. A later price does not replace an entry’s saved price.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P03</span>
+          <span class="case-title">Change the pack price during a Day</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> The first entry keeps its original price and cost. Entries saved after the change use the new price. The time the new price began applying is visible.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P04</span>
+          <span class="case-title">Check total spending and average prices</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> The displayed total and both averages match your calculation, including active-Day entries. Keep full numbers while calculating; round only the final amounts shown. Do not simply average the different pack prices.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P05</span>
+          <span class="case-title">Check average spending per finished Day</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> A zero-cigarette Day answered Yes counts as one finished Day with $0 spending. An active Day and an attempt answered No are left out of both the money total and the Day count used in this average.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P06</span>
+          <span class="case-title">Check that the baseline stays fixed</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Only the chosen counted baseline Days are used. A zero-cigarette Yes Day adds its time; a No attempt adds no time. The finished baseline rate stays fixed when later activity is recorded.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P07</span>
+          <span class="case-title">Start Program Days after baseline</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> No Day starts by itself. The first new Day is Program Day 1; the next counted Day is Program Day 2. Earlier Days keep their Baseline Day numbers, and baseline values stay fixed.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P08</span>
+          <span class="case-title">Check Day savings and when they change</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Actual, expected and saved amounts match the separate calculation. During the Day, Expected baseline spending stays $0.00 until the first saved cigarette, then updates only after each saved cigarette. Time passing, Pause/Resume, changing price and reopening do not move that displayed value. End Day finalizes the full Day expected amount. Savings this Day stays $0.00 until End Day is saved.</p>
+          <p><strong>Recorded note</strong> The separate baseline was opened/created in Build2.8. Its manual Program Day comparison remains unfinished; no full Build2.9 calculation comparison is claimed.</p>
+          <p class="references">Defect B2-DEF-002 (Closed, Build2.6); B2-DEF-003 (Closed, Build2.7)</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P09</span>
+          <span class="case-title">Pause and change price while paused</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Paused time adds no expected spending or savings. The price change made while paused is saved. After Resume, later running time uses the price that applies then. “Savings this day” follows the end-of-Day rule in B2-P08.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P10</span>
+          <span class="case-title">Check zero and negative savings</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Yes keeps $0 actual spending and the calculated savings. No attempts have no savings. Negative savings keep their minus sign. Money uses two decimal places; a result exactly halfway between cents rounds away from zero.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P11</span>
+          <span class="case-title">Check old results after new activity and reopening</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> All previously completed results, saved prices and the fixed baseline remain unchanged.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P12</span>
+          <span class="case-title">Check the exported file against the app</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> The separate export is for the correct build and format. Counts, prices, money, averages, baseline and Day savings agree with the app and your separate calculations.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P13</span>
+          <span class="case-title">Cancel an export</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Cancelling changes no saved records or cigarette counts, and leaves the same Day active.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P14</span>
+          <span class="case-title">Check saves survive interruptions</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Every action or price change that finished saving is present exactly once. Nothing already saved is lost or duplicated. Recovery after an interruption preserves the saved state. Do not perform Reset recovery on ordinary tester data.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P16</span>
+          <span class="case-title">Check the finished baseline summary</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> The summary is hidden until baseline finishes. It uses only counted baseline Days and excludes No attempts and all later activity. Average cigarettes show two decimals, average length rounds to the nearest second, and average US dollar cost shows two decimals.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P17</span>
+          <span class="case-title">Count a cigarette-free last baseline Day</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> The cigarette-free Day is kept and counted, including its time excluding pauses. Baseline is complete. Nothing starts automatically; the next Day you start is Program Day 1.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P18</span>
+          <span class="case-title">Repeat a cigarette-free baseline Day</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Each No attempt is closed and keeps every action, time, price and price change. Each new attempt has its own unique saved identifier but still shows Baseline Day 3. Baseline stays unfinished.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P19</span>
+          <span class="case-title">Check what Yes and No count after baseline</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> No is excluded from baseline time, completed-Day averages and savings, and repeats the same Program Day number on the next Start. Yes counts the finished zero-cigarette Program Day, includes its calculated savings and advances the next Start by one. Neither answer starts a Day automatically.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P20</span>
+          <span class="case-title">Keep Yes or No after closing the app</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Each saved Yes or No choice survives reopening and recovery. No extra End records or duplicate attempts appear. Cancel keeps the same Day active and changes no saved records.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P21</span>
+          <span class="case-title">Compare exported records and the report</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Different attempts have different saved identifiers. Their saved order and decisions remain in the file. The checking screen and report show the correct Baseline Day or Program Day numbers, counts, money and choices. The earlier missing-report defect is B2-DEF-001; its closure alone does not pass this entire test.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+          <p class="references">Defect B2-DEF-001 (related report check)</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P22</span>
+          <span class="case-title">Keep earlier cigarette-free Days after updating</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Old history and results survive without Reset. Earlier counted zero-cigarette Days remain counted as earlier records (saved label legacy_counted); the app must not invent a Yes answer. Seeing history on screen alone is not enough to pass.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B2-P23</span>
+          <span class="case-title">Check empty baseline and valid End times</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> The first baseline gives a smoking rate of zero. With no running baseline time, the rate and savings are unavailable. End must be later than Start and cannot be earlier than a saved price change.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B22-F01</span>
+          <span class="case-title">Check the app consistently says Day</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> User-facing wording says Day. Internal names and raw exported column names may still say session; those names are unchanged.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B22-F02</span>
+          <span class="case-title">Check numbering for each baseline length</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Each length keeps its full Baseline Day numbering. No new Day starts by itself. Your next Starts show Program Day 1 then Program Day 2. The baseline summary and saved history remain unchanged.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B22-F03</span>
+          <span class="case-title">Check Program Day numbering for Yes and No</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Every No keeps the next Start at Program Day 1 with a separate saved identifier. Yes counts it; the next Start is Program Day 2. All visible numbers agree. Baseline values and previously saved counts, costs and savings survive reopening.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B22-F04</span>
+          <span class="case-title">Check Day numbers agree everywhere</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Every display distinguishes Baseline Day from Program Day and agrees on the number. Earlier saved later Days show their Program Day number. Display numbering changes no saved identifiers, original record order, captured data or calculations.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B22-F05</span>
+          <span class="case-title">Check the version on screen and in the file</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> The screen shows Build2.9 / v2.9.0. The filename starts SM_Build2.9_v2.9.0_. The file’s build and version agree. Export format stays 6; phone-save format stays 5. A later app change needs its own version and testing record.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B25-T01</span>
+          <span class="case-title">Timer stays at zero until the first cigarette</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> The timer stays at zero before the first cigarette, even after Start Day. The first saved cigarette starts it. A cigarette from a previous Day cannot start the new Day’s timer.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B25-T02</span>
+          <span class="case-title">Each cigarette restarts the timer</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Every later saved cigarette resets the timer to zero. It then increases only for time the Day is running since that latest cigarette.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B25-T03</span>
+          <span class="case-title">Pause and Resume the timer</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Pause holds the timer at its current value. Resume continues from that value. All pauses since the latest cigarette are left out. Repeated pauses and reopening preserve that running-time total.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B25-T04</span>
+          <span class="case-title">End a Day and check the next Day’s timer</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Cancel or an End not yet saved leaves the active timer intact. A saved End resets it to zero, including Yes and No outcomes. It remains zero while idle, after reopening and after the next Start until the first cigarette is saved.</p>
+          <p><strong>Recorded note</strong> Build2.9 has not completed this full case. Earlier-version results remain historical.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pass">
+        <summary>
+          <span class="case-id">B29-F01</span>
+          <span class="case-title">Record an entry after more than one minute</span>
+          <span class="status pass">Pass</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> The new entry says not_required because more than one minute has passed since the prior entry in that Day.</p>
+          <p><strong>Recorded note</strong> CSV row 25: 2026-11-07 15:51:45-05:00; previous Smoke row 24 at 13:01:17-05:00. Gap 10,228 seconds; not_required. Verifies captured evidence, not absence of every UI prompt. Evidence B29-E01; recorded November 7, 2026.</p>
+          <p class="references">Evidence B29-E01</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pass">
+        <summary>
+          <span class="case-id">B29-F02</span>
+          <span class="case-title">Confirm separate entries less than a minute apart</span>
+          <span class="status pass">Pass</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Every separate entry accepted after Yes is saved once, keeps its original time, and says yes in the export.</p>
+          <p><strong>Recorded note</strong> CSV rows 26-28: 15:51:46, 15:52:03, 15:52:07-05:00 on November 7. Gaps 1, 17 and 4 seconds; all yes, with distinct event IDs. Does not independently prove the delay between selection and confirmation. Evidence B29-E02; recorded November 7, 2026.</p>
+          <p class="references">Evidence B29-E02</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B29-F03</span>
+          <span class="case-title">Decline a close entry without changing saved records</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> No or Cancel leaves the saved count and previous entries unchanged. No new entry is added.</p>
+          <p><strong>Recorded note</strong> No current-version phone before/after evidence for a declined or cancelled close-Smoke prompt was supplied.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B29-F04</span>
+          <span class="case-title">Keep the original time while waiting to confirm</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> The saved time is when Smoke was selected, even when Yes was selected later.</p>
+          <p><strong>Recorded note</strong> Automated delayed-confirmation checks passed; current-version phone selection-versus-confirmation timing remains unobserved.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B29-F05</span>
+          <span class="case-title">Keep the confirmation after reopening</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> After reopening or recovering a save, keep the same entry, time and answer. Do not lose it or add a duplicate.</p>
+          <p><strong>Recorded note</strong> Automated lost-acknowledgement/recovery and reopen checks passed. Controlled phone evidence remains pending; use an agreed disposable test procedure.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pass">
+        <summary>
+          <span class="case-id">B29-F06</span>
+          <span class="case-title">Leave older confirmations unknown</span>
+          <span class="status pass">Pass</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Older entries with no saved answer say unknown. Do not guess that Yes was selected in the past.</p>
+          <p><strong>Recorded note</strong> Fourteen older Smoke rows export unknown; nine older close pairs remain Inconclusive. This verifies the export representation only; cross-export preservation is a separate Pending check. Evidence B29-E06; recorded November 7, 2026.</p>
+          <p class="references">Evidence B29-E06</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pending">
+        <summary>
+          <span class="case-id">B29-F07</span>
+          <span class="case-title">Keep two separately confirmed entries in the same second</span>
+          <span class="status pending">Pending</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Two separately confirmed entries may have the same second. Keep both, with different IDs and the original order.</p>
+          <p><strong>Recorded note</strong> Automated same-second checks passed. The new confirmed phone entries are 1, 17 and 4 seconds apart; no new same-second yes pair was captured.</p>
+        </div>
+      </details>
+      <details class="case" data-status="Inconclusive">
+        <summary>
+          <span class="case-id">B29-F08</span>
+          <span class="case-title">Precise one-minute boundary is deferred</span>
+          <span class="status inconclusive">Inconclusive</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> Exactly 60 seconds needs Yes; 61 seconds does not. This precise phone check is deferred and remains Inconclusive.</p>
+          <p><strong>Recorded note</strong> Deferred by owner on November 7: exact timing is too precise to worry about now and needs simulation. Automated 0/59/60/61-second checks passed; no exact-60-second phone pair is present. Not a defect or a claimed phone Pass. Evidence B29-E08; recorded November 7, 2026.</p>
+          <p class="references">Evidence B29-E08</p>
+        </div>
+      </details>
+      <details class="case" data-status="Pass">
+        <summary>
+          <span class="case-id">B29-F09</span>
+          <span class="case-title">Check the new export heading and version</span>
+          <span class="status pass">Pass</span>
+        </summary>
+        <div class="case-body">
+          <p><strong>Expected behavior</strong> The export says Build2.9, version 2.9.0 and CSV 7. Earlier headings stay in place. The new confirmation heading is last and is blank for actions other than Smoke.</p>
+          <p><strong>Recorded note</strong> Inspected the 28-row export with 20 headings. Metadata and field values match the CSV 7 contract. Download suffix (1) causes a filename-only validator failure; not an app capture defect or full B2-P12/B2-P21 Pass. Evidence B29-E09; recorded November 7, 2026.</p>
+          <p class="references">Evidence B29-E09</p>
+        </div>
+      </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap"><a href="index.html">Back to the showcase</a></footer>
+  <script>
+    const filter = document.querySelector("#status");
+    const cases = document.querySelectorAll(".case");
+    const count = document.querySelector("#visible-count");
+
+    function showMatchingCases() {
+      let visible = 0;
+      for (const testCase of cases) {
+        testCase.hidden = Boolean(filter.value && filter.value !== testCase.dataset.status);
+        if (!testCase.hidden) visible++;
+      }
+      count.textContent = `${visible} of ${cases.length} cases`;
+    }
+
+    filter.addEventListener("change", showMatchingCases);
+    showMatchingCases();
+    document.querySelector("#filters").hidden = false;
+  </script>
+</body>
+</html>

@@ -21,6 +21,7 @@ images/*
 !CSV_Validator/examples/build-2.9-recorded-overview.pdf
 !/docs/
 !/docs/index.html
+!/docs/validation-log.html
 !/docs/.nojekyll
 !/docs/images/
 !/docs/images/setup.png

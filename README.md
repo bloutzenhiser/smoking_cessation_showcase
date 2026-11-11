@@ -6,14 +6,15 @@ show fewer cigarettes even when the smoking rate stayed the same. Build 2 uses
 **cigarettes per unpaused hour** to compare Days of different lengths and estimate
 what later Days would cost at the baseline rate.
 
-**Showcase v0.06 · Development on hold · Final installed-app testing and sign-off pending**
+**Showcase v0.07 · Development on hold · Final installed-app testing and sign-off pending**
 
 The showcase version tracks this public presentation. **Validation snapshot
 v0.03** identifies the published evidence package. **Build 2.9 (app v2.9.0)**
 is the app version covered by that evidence.
 
 [Visit the showcase website](https://bloutzenhiser.github.io/smoking_cessation_showcase/) ·
-[Read the validation record](VALIDATION.md)
+[Browse the online validation log](https://bloutzenhiser.github.io/smoking_cessation_showcase/validation-log.html) ·
+[Read the full validation record](VALIDATION.md)
 
 ## From Build 1 to Build 2
 
@@ -68,6 +69,10 @@ the original checks requires the separately maintained Python validator.
 - [Full validation record](VALIDATION.md) includes the CSV export, functional testing logs, and defect logs. The CSV uses a tester alias and replacement record IDs.
 
 ## Showcase history
+
+### v0.07 — November 10, 2026
+
+- Added a web view of all 41 Build 2.9 validation cases with a result filter.
 
 ### v0.06 — November 10, 2026
 

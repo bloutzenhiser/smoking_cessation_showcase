@@ -133,7 +133,8 @@
       border-block: 1px solid var(--line);
     }
     .validation p { max-width: 45ch; margin: 0.65rem 0 0; }
-    .validation a { justify-self: start; font-weight: 650; }
+    .validation-links { display: grid; gap: 0.75rem; justify-items: start; }
+    .validation a { font-weight: 650; }
     .footer { color: var(--muted); font-size: 0.9rem; }
 
     @media (max-width: 46rem) {
@@ -189,7 +190,10 @@
         <h2 id="validation-heading">Build 2.9 testing</h2>
         <p>The published reports review 28 recorded test events with the tester label and record IDs replaced. Final testing of the installed app and Build 2 sign-off remain open.</p>
       </div>
-      <a href="https://github.com/bloutzenhiser/smoking_cessation_showcase/blob/main/VALIDATION.md">See the full validation record on GitHub</a>
+      <div class="validation-links">
+        <a class="button" href="validation-log.html">Browse the validation log</a>
+        <a href="https://github.com/bloutzenhiser/smoking_cessation_showcase/blob/main/VALIDATION.md">See the full validation record on GitHub</a>
+      </div>
     </section>
   </main>
 

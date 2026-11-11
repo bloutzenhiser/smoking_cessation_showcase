@@ -8,7 +8,7 @@
   "acceptance_status": "Installed-app regression and final Build 2 acceptance remain open.",
   "files": {
     ".gitattributes": "5b4726ee5faf5c62cf56e2df2e0c2f67ed0e51f15b1df9e90255ed019b937c0e",
-    ".gitignore": "18f975187f2b49f372e97c61c661b8ae97246e09ca4593520ccdc88d051e44de",
+    ".gitignore": "7a78b8c061ad27b7a1b9309a91fa77b2aa446b98e7927e99acaefc5b9cd33e32",
     "BUILD_2_IMPLEMENTATION_AND_TESTING.md": "1efa543e585514c69458539923de2712a4cf81d6254e36857004a977b6a9d49e",
     "BUILD_2_REQUIREMENTS.md": "49ada13f6f0c23f17f79834da52fe1f106380719a288daaece527086e61601cf",
     "CSV_Validator/examples/14_Build_2.9_Plain_English_Validation_Log_v0.08.xlsx": "3331ef3934e66e1ec41eff20dc7b890b361c3cac32e87fbb3bacd538f3e2fb98",
@@ -19,14 +19,15 @@
     "CSV_Validator/examples/build-2.9-recorded-detailed.pdf": "21c6810687591b20378a7de97eacd7daac1bed8228a5aedafa9592eb4ccfa14a",
     "CSV_Validator/examples/build-2.9-recorded-overview.pdf": "5083888fd3af36ed643e93fc708c00b48da86d802a954efbf044dc1ef946b2d8",
     "PROJECT_OVERVIEW.md": "1081412420f0707e86de3cc44d7f2242f8fb6a2c783875e6acd03be037bbf13b",
-    "README.md": "eb2e279fa13b768b0595e0112d7c0edeeb7d3b8448d2662c89415d38ec8ab37e",
+    "README.md": "d2f35e96376400d469d55de0e92d86e632df1fb214b71e10f3bd9529cb35cd8b",
     "VALIDATION.md": "ef91b74d20696fc4e45757f206254486c53fe1b3778493820ff8f357c6e7a4cb",
     "docs/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "docs/images/day.png": "6a2bab73935fa9001a8dee2bc91e33382a7746ea3f7b5900804154a53ccb52b5",
     "docs/images/setup.png": "6bb227013de13bb92c518e5cc093ce2f2cee9bff90f46b38fed81dab5405b0ca",
-    "docs/index.html": "0b9a1da760ead44b7f54570f88742f8c3472d25dabf8a1fbf21702829c34e203",
+    "docs/index.html": "a2709ddb4e8dfc38f31039ffada840aa427b27df40c7e810b775fa87537aef6d",
+    "docs/validation-log.html": "72afa6a57b5b59163555d605490f6773450fc6a0d578272677223753cb9db976",
     "images/day.png": "6a2bab73935fa9001a8dee2bc91e33382a7746ea3f7b5900804154a53ccb52b5",
     "images/setup.png": "6bb227013de13bb92c518e5cc093ce2f2cee9bff90f46b38fed81dab5405b0ca"
   },
-  "showcase_version": "0.06"
+  "showcase_version": "0.07"
 }
